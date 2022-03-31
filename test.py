@@ -43,64 +43,6 @@ async def info(ctx):
     await ctx.send(embed=info)
 # ____________________________#
 
-
-#say command
-@client.command()
-async def say(ctx, message, channel, type=None):
-    sended = client.get_channel(int(channel))
-    if type == None:
-        say = discord.Embed(colour=0xE59866)
-        say.add_field(name="message sended!", value="‌")
-        await sended.send(message)
-        await ctx.reply(embed=say)
-    else:
-        if type == "Embed" or type == "Text":
-            if type == "Embed":
-                say = discord.Embed(colour=0xE59866)
-                say.add_field(name="message sended!", value="‌")
-                Embed = discord.Embed(colour=0xE59866)
-                Embed.add_field(name="‌", value=message)
-                await sended.send(embed=Embed)
-                await ctx.reply(embed=say)
-            if type == "Text":
-                say = discord.Embed(colour=0xE59866)
-                say.add_field(name="message sended!", value="‌")
-                await sended.send(message)
-                await ctx.reply(embed=say)
-        else:
-            say = discord.Embed(colour=0xE59866)
-            say.add_field(name="Error from Type is not Embed or Text!", value="‌")
-            await ctx.reply(embed=say)
-
-@slash.slash(name="say", description="send a message to a channel💬")               
-async def say(ctx, message, channel, type=None):
-    sended = client.get_channel(int(channel))
-    if type == None:
-        say = discord.Embed(colour=0xE59866)
-        say.add_field(name="message sended!", value="‌")
-        await sended.send(message)
-        await ctx.reply(embed=say)
-    else:
-        if type == "Embed" or type == "Text":
-            if type == "Embed":
-                say = discord.Embed(colour=0xE59866)
-                say.add_field(name="message sended!", value="‌")
-                Embed = discord.Embed(colour=0xE59866)
-                Embed.add_field(name="‌", value=message)
-                await sended.send(embed=Embed)
-                await ctx.reply(embed=say)
-            if type == "Text":
-                say = discord.Embed(colour=0xE59866)
-                say.add_field(name="message sended!", value="‌")
-                await sended.send(message)
-                await ctx.reply(embed=say)
-        else:
-            say = discord.Embed(colour=0xE59866)
-            say.add_field(name="Error from Type is not Embed or Text!", value="‌")
-            await ctx.reply(embed=say)
-
-# ____________________________#
-
 #client login     
 
 @client.event
